@@ -1039,7 +1039,7 @@ body {
 }
 
 .service-card__list li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: var(--color-accent);
