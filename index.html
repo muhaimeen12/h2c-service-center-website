@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2C Service Center - Expert Appliance & HVAC Repair Services</title>
+    <meta name="description" content="Professional appliance and HVAC repair services. AC installation, refrigerator service, washing machine repair, PCB board fixing, and more. Contact H2C Service Center today!">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <i class="fas fa-tools nav__brand-icon"></i>
+                <span class="nav__brand-text">H2C SERVICE CENTER</span>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+                
+                <a href="tel:8015876822" class="btn btn--primary nav__cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Expert Appliance & HVAC Repair Services</h1>
+                    <p class="hero__description">Professional installation, repair, and maintenance services for all your home appliances, AC units, refrigerators, and electronic devices. Quick response, quality work, guaranteed satisfaction.</p>
+                    
+                    <div class="hero__buttons">
+                        <a href="#contact" class="btn btn--primary btn--lg">Get Free Quote</a>
+                        <a href="tel:8015876822" class="btn btn--outline btn--lg">
+                            <i class="fas fa-phone"></i> 8015876822
+                        </a>
+                    </div>
+                    
+                    <div class="hero__features">
+                        <div class="hero__feature">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Service</span>
+                        </div>
+                        <div class="hero__feature">
+                            <i class="fas fa-medal"></i>
+                            <span>Expert Technicians</span>
+                        </div>
+                        <div class="hero__feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Quality Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__image">
+                    <div class="hero__image-placeholder">
+                        <i class="fas fa-tools hero__image-icon"></i>
+                        <p>Professional Service Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Our Professional Services</h2>
+                    <p class="section__subtitle">Comprehensive appliance and HVAC solutions for your home and business</p>
+                </div>
+                
+                <div class="services__grid">
+                    <!-- Air Conditioning Services -->
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3 class="service-card__title">Air Conditioning</h3>
+                        <ul class="service-card__list">
+                            <li>AC Installation & Service</li>
+                            <li>HVAC Systems</li>
+                            <li>Cassette & Window AC</li>
+                            <li>Split AC Repair</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Home Appliances -->
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="service-card__title">Home Appliances</h3>
+                        <ul class="service-card__list">
+                            <li>All Types of Refrigerator</li>
+                            <li>Washing Machine Repair</li>
+                            <li>Electronics Service</li>
+                            <li>Appliance Installation</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Technical Services -->
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3 class="service-card__title">Technical Services</h3>
+                        <ul class="service-card__list">
+                            <li>PCB Board Repairing</li>
+                            <li>Mechanical Works</li>
+                            <li>Electrical Works</li>
+                            <li>Plumbing Services</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="services__cta">
+                    <p>Need a specific service not listed? <strong>We can help!</strong></p>
+                    <a href="#contact" class="btn btn--primary">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature">
+                        <i class="fas fa-clock feature__icon"></i>
+                        <h3 class="feature__title">24/7 Service Available</h3>
+                        <p class="feature__text">Emergency repairs available around the clock</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-user-tie feature__icon"></i>
+                        <h3 class="feature__title">Experienced Technicians</h3>
+                        <p class="feature__text">Certified professionals with years of experience</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools feature__icon"></i>
+                        <h3 class="feature__title">Quality Spare Parts</h3>
+                        <p class="feature__text">Only genuine parts for lasting repairs</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tag feature__icon"></i>
+                        <h3 class="feature__title">Competitive Pricing</h3>
+                        <p class="feature__text">Fair and transparent pricing for all services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__text">
+                        <div class="section__header">
+                            <h2 class="section__title">About H2C Service Center</h2>
+                            <p class="section__subtitle">Your trusted partner for all appliance and HVAC needs</p>
+                        </div>
+                        
+                        <p class="about__description">
+                            H2C Service Center is a leading provider of comprehensive appliance and HVAC repair services. 
+                            With years of experience and a commitment to excellence, we serve residential and commercial 
+                            customers with professional installation, repair, and maintenance services.
+                        </p>
+                        
+                        <div class="about__contact-person">
+                            <h4>Contact Person</h4>
+                            <p><strong>Wajid</strong> - Service Manager</p>
+                            <p>
+                                <i class="fas fa-phone"></i> 
+                                <a href="tel:8015876822">8015876822</a> / 
+                                <a href="tel:7200696822">7200696822</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope"></i> 
+                                <a href="mailto:h2crefrigeration@gmail.com">h2crefrigeration@gmail.com</a>
+                            </p>
+                        </div>
+                        
+                        <div class="about__social">
+                            <a href="https://www.instagram.com/h2cservicecenter?utm_source=qr&igsh=M3A5Y2dhcnRraW1q" 
+                               target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i> Follow us on Instagram
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="about__stats">
+                        <div class="stat">
+                            <span class="stat__number" data-target="500">0</span>
+                            <span class="stat__label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-target="100">0</span>
+                            <span class="stat__label">Service Areas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-target="24">0</span>
+                            <span class="stat__label">Hours Support</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-target="99">0</span>
+                            <span class="stat__label">% Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="section__subtitle">Ready to fix your appliances? Contact us for a free consultation</p>
+                </div>
+                
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <i class="fas fa-map-marker-alt contact__item-icon"></i>
+                            <div>
+                                <h4>Service Areas</h4>
+                                <p>We serve residential and commercial customers across the region</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <i class="fas fa-phone contact__item-icon"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>
+                                    <a href="tel:8015876822">8015876822</a><br>
+                                    <a href="tel:7200696822">7200696822</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <i class="fas fa-envelope contact__item-icon"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:h2crefrigeration@gmail.com">h2crefrigeration@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <i class="fas fa-clock contact__item-icon"></i>
+                            <div>
+                                <h4>Service Hours</h4>
+                                <p>24/7 Emergency Service Available</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Required</label>
+                            <select id="service" name="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="AC Repair">AC Repair & Installation</option>
+                                <option value="Refrigerator">Refrigerator Service</option>
+                                <option value="Washing Machine">Washing Machine Repair</option>
+                                <option value="PCB Repair">PCB Board Repairing</option>
+                                <option value="HVAC">HVAC Systems</option>
+                                <option value="Electronics">Electronics Repair</option>
+                                <option value="Plumbing">Plumbing Works</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Describe your issue or requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <div id="form-status" class="form-status hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__brand">
+                        <i class="fas fa-tools footer__brand-icon"></i>
+                        <span class="footer__brand-text">H2C SERVICE CENTER</span>
+                    </div>
+                    <p class="footer__description">Professional appliance and HVAC repair services you can trust.</p>
+                    
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/h2cservicecenter?utm_source=qr&igsh=M3A5Y2dhcnRraW1q" 
+                           target="_blank" class="footer__social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__links">
+                        <li>AC Installation & Repair</li>
+                        <li>Refrigerator Service</li>
+                        <li>Washing Machine Repair</li>
+                        <li>PCB Board Repairing</li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact Info</h4>
+                    <div class="footer__contact">
+                        <p><i class="fas fa-phone"></i> <a href="tel:8015876822">8015876822</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:7200696822">7200696822</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:h2crefrigeration@gmail.com">h2crefrigeration@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 H2C Service Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot__toggle" id="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <div class="chatbot__window hidden" id="chatbot-window">
+            <div class="chatbot__header">
+                <div class="chatbot__title">
+                    <i class="fas fa-headset"></i>
+                    <span>Chat with us!</span>
+                </div>
+                <button class="chatbot__close" id="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot__messages" id="chatbot-messages">
+                <div class="chatbot__message chatbot__message--bot">
+                    <div class="chatbot__message-content">
+                        Hello! 👋 Welcome to H2C Service Center. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot__input-area">
+                <input type="text" class="chatbot__input" id="chatbot-input" placeholder="Type your message...">
+                <button class="chatbot__send" id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
