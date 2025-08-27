@@ -1,21 +1,3 @@
-// Initialize EmailJS with a demo setup for testing
-(function() {
-    // For testing purposes - in production, replace with actual EmailJS keys
-    emailjs.init("93zDsPwQzFyRRDEKH");
-    emailjs.send("service_51ypd2o", "contact_form", templateParams)
-    .then(function(response) {
-        // handle success
-    }, function(error) {
-        // handle error
-    });
-    emailjs.send("service_51ypd2o", "chatbot_inquiry", templateParams)
-    .then(function(response) {
-        // handle success
-    }, function(error) {
-        // handle error
-    });
-})();
-
 // DOM Elements
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -29,8 +11,12 @@ const chatbotMessages = document.getElementById('chatbot-messages');
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotSend = document.getElementById('chatbot-send');
 
-// Wait for DOM to be fully loaded
+// Initialize EmailJS and start website after DOM loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your public key
+    emailjs.init("TXEp_uVvMBdqsW0C-");
+    
+    // Initialize website functionality
     initializeWebsite();
 });
 
@@ -103,7 +89,6 @@ function setupNavigation() {
     const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
     phoneLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Allow default behavior for phone links
             console.log('Calling:', this.getAttribute('href'));
         });
     });
@@ -112,13 +97,12 @@ function setupNavigation() {
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     emailLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Allow default behavior for email links
             console.log('Emailing:', this.getAttribute('href'));
         });
     });
 }
 
-// Contact Form Setup
+// Contact Form Setup with Real EmailJS Integration
 function setupContactForm() {
     if (!contactForm) return;
 
@@ -156,42 +140,28 @@ function setupContactForm() {
             return;
         }
 
-        // Simulate form submission (replace with actual EmailJS in production)
+        // Send real email using EmailJS
         try {
-            // In production, replace this with actual EmailJS call
-            await simulateEmailSend({
-                name: name,
-                email: email,
+            await emailjs.send("service_51ypd2o", "contact_form", {
+                from_name: name,
+                from_email: email,
                 phone: phone,
                 service: service,
-                message: message
+                message: message,
+                source: 'Contact Form',
+                to_email: 'h2crefrigeration@gmail.com'
             });
             
             showFormStatus('success', 'Thank you! Your message has been sent successfully. We will contact you soon at ' + phone + '.');
             contactForm.reset();
+            
         } catch (error) {
-            console.error('Form submission error:', error);
+            console.error('EmailJS Contact Form Error:', error);
             showFormStatus('error', 'Sorry, there was an error sending your message. Please call us directly at 8015876822.');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }
-    });
-}
-
-// Simulate email sending for demo purposes
-function simulateEmailSend(data) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log('Email would be sent to h2crefrigeration@gmail.com with data:', data);
-            console.log('Form submission details:');
-            console.log('- Name:', data.name);
-            console.log('- Email:', data.email);
-            console.log('- Phone:', data.phone);
-            console.log('- Service:', data.service);
-            console.log('- Message:', data.message);
-            resolve();
-        }, 1500);
     });
 }
 
@@ -209,7 +179,7 @@ function showFormStatus(type, message) {
     }, 8000);
 }
 
-// Chatbot Setup
+// Chatbot Setup with Real EmailJS Integration
 function setupChatbot() {
     const chatbot = new Chatbot();
 }
@@ -221,7 +191,7 @@ class Chatbot {
         this.userInfo = {};
         this.steps = [
             {
-                message: "I'd be happy to help you! What's your name?",
+                message: "Hello! I'm here to help you with H2C Service Center. What's your name?",
                 field: 'name',
                 validation: (input) => input.trim().length > 0
             },
@@ -290,8 +260,11 @@ class Chatbot {
             });
         }
         
-        // Add initial quick action buttons
-        this.addInitialQuickActions();
+        // Add welcome message and initial quick actions
+        setTimeout(() => {
+            this.addMessage("Welcome to H2C Service Center! How can I help you today?");
+            this.addInitialQuickActions();
+        }, 1000);
     }
     
     toggleChat() {
@@ -347,7 +320,7 @@ class Chatbot {
             const btn = document.createElement('button');
             btn.textContent = suggestion;
             btn.style.cssText = `
-                background: var(--primary-blue);
+                background: #0072B8;
                 color: white;
                 border: none;
                 padding: 6px 12px;
@@ -363,11 +336,11 @@ class Chatbot {
             });
             
             btn.addEventListener('mouseenter', () => {
-                btn.style.background = 'var(--secondary-blue)';
+                btn.style.background = '#005B96';
             });
             
             btn.addEventListener('mouseleave', () => {
-                btn.style.background = 'var(--primary-blue)';
+                btn.style.background = '#0072B8';
             });
             
             suggestionsDiv.appendChild(btn);
@@ -378,57 +351,56 @@ class Chatbot {
     }
     
     addInitialQuickActions() {
-        setTimeout(() => {
-            if (chatbotMessages) {
-                const quickActionsDiv = document.createElement('div');
-                quickActionsDiv.className = 'quick-actions';
-                quickActionsDiv.style.cssText = 'margin-top: 16px;';
-                
-                const quickActions = [
-                    'Get a Quote',
-                    'Emergency Repair',
-                    'Schedule Service',
-                    'Ask Question'
-                ];
-                
-                quickActions.forEach(action => {
-                    const btn = document.createElement('button');
-                    btn.textContent = action;
-                    btn.style.cssText = `
-                        display: block;
-                        width: 100%;
-                        background: var(--color-bg-1);
-                        border: 1px solid var(--color-border);
-                        padding: 10px;
-                        margin: 4px 0;
-                        border-radius: 8px;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        text-align: left;
-                        color: var(--color-text);
-                    `;
-                    
-                    btn.addEventListener('click', () => {
-                        this.handleUserInput(action);
-                        quickActionsDiv.remove();
-                    });
-                    
-                    btn.addEventListener('mouseenter', () => {
-                        btn.style.background = 'var(--primary-blue)';
-                        btn.style.color = 'white';
-                    });
-                    
-                    btn.addEventListener('mouseleave', () => {
-                        btn.style.background = 'var(--color-bg-1)';
-                        btn.style.color = 'var(--color-text)';
-                    });
-                    
-                    quickActionsDiv.appendChild(btn);
-                });
-                
-                chatbotMessages.appendChild(quickActionsDiv);
-            }
-        }, 500);
+        if (!chatbotMessages) return;
+        
+        const quickActionsDiv = document.createElement('div');
+        quickActionsDiv.className = 'quick-actions';
+        quickActionsDiv.style.cssText = 'margin-top: 16px;';
+        
+        const quickActions = [
+            'Get a Quote',
+            'Emergency Repair',
+            'Schedule Service',
+            'Ask Question'
+        ];
+        
+        quickActions.forEach(action => {
+            const btn = document.createElement('button');
+            btn.textContent = action;
+            btn.style.cssText = `
+                display: block;
+                width: 100%;
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+                padding: 10px;
+                margin: 4px 0;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: left;
+                color: #333;
+            `;
+            
+            btn.addEventListener('click', () => {
+                this.handleUserInput(action);
+                quickActionsDiv.remove();
+                setTimeout(() => this.showNextStep(), 500);
+            });
+            
+            btn.addEventListener('mouseenter', () => {
+                btn.style.background = '#0072B8';
+                btn.style.color = 'white';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.background = '#f8f9fa';
+                btn.style.color = '#333';
+            });
+            
+            quickActionsDiv.appendChild(btn);
+        });
+        
+        chatbotMessages.appendChild(quickActionsDiv);
     }
     
     sendMessage() {
@@ -477,6 +449,8 @@ class Chatbot {
     }
     
     showNextStep() {
+        if (this.currentStep >= this.steps.length) return;
+        
         const step = this.steps[this.currentStep];
         let message = step.message;
         
@@ -498,22 +472,24 @@ class Chatbot {
     async completeChat() {
         this.addMessage("Thank you for providing all the details! Let me send this information to our team. They will contact you soon. 📞");
         
-        // Simulate sending email
+        // Send real email using EmailJS
         try {
-            await simulateEmailSend({
-                name: this.userInfo.name,
-                email: this.userInfo.email,
-                phone: this.userInfo.phone,
-                service: this.userInfo.service,
-                message: this.userInfo.message,
-                source: 'Chatbot'
+            await emailjs.send("service_51ypd2o", "chatbot_inquiry", {
+                customer_name: this.userInfo.name,
+                customer_email: this.userInfo.email,
+                customer_phone: this.userInfo.phone,
+                service_type: this.userInfo.service,
+                customer_message: this.userInfo.message,
+                source: 'Website Chatbot',
+                to_email: 'h2crefrigeration@gmail.com'
             });
             
             setTimeout(() => {
                 this.addMessage("✅ Your request has been sent successfully! Our team will contact you within 24 hours. For urgent matters, please call us at 8015876822.");
             }, 1000);
+            
         } catch (error) {
-            console.error('Chatbot form submission error:', error);
+            console.error('EmailJS Chatbot Error:', error);
             setTimeout(() => {
                 this.addMessage("❌ There was an error sending your request. Please call us directly at 8015876822 or email h2crefrigeration@gmail.com");
             }, 1000);
@@ -529,7 +505,7 @@ class Chatbot {
         this.currentStep = 0;
         this.userInfo = {};
         
-        // Clear messages except the initial one
+        // Clear messages except welcome message
         const messages = chatbotMessages?.children;
         if (messages && messages.length > 1) {
             for (let i = messages.length - 1; i > 0; i--) {
@@ -538,7 +514,9 @@ class Chatbot {
         }
         
         // Re-add quick actions
-        this.addInitialQuickActions();
+        setTimeout(() => {
+            this.addInitialQuickActions();
+        }, 1000);
     }
 }
 
@@ -686,30 +664,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Console logs for setup
+// Success console logs
 console.log('🚀 H2C Service Center website loaded successfully!');
-console.log('📧 Contact form configured to send to: h2crefrigeration@gmail.com');
+console.log('📧 Contact form and chatbot connected to: h2crefrigeration@gmail.com');
 console.log('📞 Phone numbers: 8015876822 / 7200696822');
 console.log('👤 Contact person: Wajid');
 console.log('💬 Chatbot is ready for customer inquiries');
-
-// Instructions for production setup
-console.log(`
-📋 PRODUCTION SETUP INSTRUCTIONS:
-
-1. Sign up for EmailJS at https://www.emailjs.com/
-2. Create an email service (Gmail recommended)
-3. Create an email template with these variables:
-   - {{from_name}}
-   - {{from_email}}
-   - {{phone}}
-   - {{service}}
-   - {{message}}
-   - {{source}}
-
-4. Replace these placeholders in the code:
-   - Line 2: Add your EmailJS public key
-   - Lines for emailjs.send(): Add your service ID and template ID
-
-5. Test the email functionality before going live!
-`);
+console.log('✅ EmailJS integration is active and ready!');
