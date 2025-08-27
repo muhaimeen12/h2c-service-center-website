@@ -470,7 +470,7 @@ class Chatbot {
     }
     
     async completeChat() {
-        this.addMessage("Thank you for providing all the details! Let me send this information to our team. They will contact you soon. 📞");
+        this.addMessage("Thank you for providing all the details! Let me send this information to our team. They will contact you soon. ðŸ“ž");
         
         // Send real email using EmailJS
         try {
@@ -485,13 +485,13 @@ class Chatbot {
             });
             
             setTimeout(() => {
-                this.addMessage("✅ Your request has been sent successfully! Our team will contact you within 24 hours. For urgent matters, please call us at 8015876822.");
+                this.addMessage("âœ… Your request has been sent successfully! Our team will contact you within 24 hours. For urgent matters, please call us at 8015876822.");
             }, 1000);
             
         } catch (error) {
             console.error('EmailJS Chatbot Error:', error);
             setTimeout(() => {
-                this.addMessage("❌ There was an error sending your request. Please call us directly at 8015876822 or email h2crefrigeration@gmail.com");
+                this.addMessage("âŒ There was an error sending your request. Please call us directly at 8015876822 or email h2crefrigeration@gmail.com");
             }, 1000);
         }
         
@@ -665,9 +665,9 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Success console logs
-console.log('🚀 H2C Service Center website loaded successfully!');
-console.log('📧 Contact form and chatbot connected to: h2crefrigeration@gmail.com');
-console.log('📞 Phone numbers: 8015876822 / 7200696822');
-console.log('👤 Contact person: Wajid');
-console.log('💬 Chatbot is ready for customer inquiries');
-console.log('✅ EmailJS integration is active and ready!');
+console.log('ðŸš€ H2C Service Center website loaded successfully!');
+console.log('ðŸ“§ Contact form and chatbot connected to: h2crefrigeration@gmail.com');
+console.log('ðŸ“ž Phone numbers: 8015876822 / 7200696822');
+console.log('ðŸ‘¤ Contact person: Wajid');
+console.log('ðŸ’¬ Chatbot is ready for customer inquiries');
+console.log('âœ… EmailJS integration is active and ready!');
