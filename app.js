@@ -1,21 +1,20 @@
 // Initialize EmailJS with a demo setup for testing
-document.addEventListener('DOMContentLoaded', function() {
-  emailjs.init("93zDsPwQzFyRRDEKH");
-
-  // Contact Form
-  function sendContactEmail(values) {
-    emailjs.send("service_51ypd2o", "contact_form", values)
-      .then(response => {/* Show success */})
-      .catch(error => {/* Show error */});
-  }
-
-  // Chatbot
-  function sendChatbotEmail(values) {
-    emailjs.send("service_51ypd2o", "chatbot_inquiry", values)
-      .then(response => {/* Success in chatbot */})
-      .catch(error => {/* Error in chatbot */});
-  }
-});
+(function() {
+    // For testing purposes - in production, replace with actual EmailJS keys
+    emailjs.init("93zDsPwQzFyRRDEKH");
+    emailjs.send("service_51ypd2o", "contact_form", templateParams)
+    .then(function(response) {
+        // handle success
+    }, function(error) {
+        // handle error
+    });
+    emailjs.send("service_51ypd2o", "chatbot_inquiry", templateParams)
+    .then(function(response) {
+        // handle success
+    }, function(error) {
+        // handle error
+    });
+})();
 
 // DOM Elements
 const navToggle = document.getElementById('nav-toggle');
