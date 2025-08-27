@@ -1,7 +1,19 @@
 // Initialize EmailJS with a demo setup for testing
 (function() {
     // For testing purposes - in production, replace with actual EmailJS keys
-    console.log('EmailJS would be initialized here with your actual keys');
+    emailjs.init("93zDsPwQzFyRRDEKH");
+    emailjs.send("service_51ypd2o", "contact_form", templateParams)
+    .then(function(response) {
+        // handle success
+    }, function(error) {
+        // handle error
+    });
+    emailjs.send("h2c_service", "chatbot_inquiry", templateParams)
+    .then(function(response) {
+        // handle success
+    }, function(error) {
+        // handle error
+    });
 })();
 
 // DOM Elements
